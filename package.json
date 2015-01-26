@@ -1,9 +1,9 @@
 {
     "name":"tiny-midi-clock",
-    "version":"0.0.0",
+    "version":"0.0.1",
     "src": [
         "src/midi_clock.h",
-        "src/midi_clock.c",
+        "src/midi_clock.c"
     ],
     "repo":"opal-instruments/tiny-midi-clock",
     "keywords": [
