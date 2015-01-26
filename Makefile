@@ -8,7 +8,7 @@ all:
 	mkdir -p bin/build
 	$(CC) -c src/midi_clock.c $(LDFLAGS) -o bin/build/midi_clock.o
 
-install:	
+install: all
 	ar -cvq bin/libtiny-midi-clock.a $(TARGET_OBJS)
 	sudo cp bin/libtiny-midi-clock.a /usr/lib
 
