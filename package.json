@@ -1,6 +1,6 @@
 {
     "name":"tiny-midi-clock",
-    "version":"0.0.2",
+    "version":"0.0.3",
     "src": [
         "src/midi_clock.h",
         "src/midi_clock.c"
@@ -11,8 +11,6 @@
         "clock",
         "bpm",
         "ppqn"
-    ],
-    "makefile":"Makefile",
-    "install":"make install"
+    ]
 }
     
