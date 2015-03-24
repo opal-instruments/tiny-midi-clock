@@ -1,13 +1,14 @@
 #include "midi_clock.h"
 
-uint32_t pulses_per_midi_clock(ppqn_clock_t * c) {
-  return (c->timebase / MIDI_CLOCK_PRECISION);
+// Returns the number of microseconds that transpire
+// for each MIDI CLOCK pulse for the passed in bpm.
+uint32_t microseconds_per_pulse(float bpm) {
+  return ((MINUTE * MICROSECOND) / bpm);
 }
 
-uint32_t microseconds_per_midi_clock(float bpm) {
-  return ((MINUTE * MICROSECOND) / (MIDI_CLOCK_PRECISION * bpm));
-}
-
-uint32_t microseconds_per_pulse(ppqn_clock_t * c, float bpm) {
-  return (pulses_per_midi_clock(c) * microseconds_per_midi_clock(bpm));
+// Returns the number of microseconds per pulse that
+// transpire for each MIDI CLOCK pusle for the passed in
+// clock and bpm.
+uint32_t clock_microseconds_per_pulse(ppqn_clock_t * c, float bpm) {
+  return microseconds_per_pulse(bpm) * (c->timebase / MIDI_CLOCK_PRECISION);
 }

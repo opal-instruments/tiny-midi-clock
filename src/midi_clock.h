@@ -15,8 +15,7 @@ typedef struct ppqn_clock {
   uint8_t timebase;
 } ppqn_clock_t;
 
-uint32_t pulses_per_midi_clock(ppqn_clock_t * c);
-uint32_t microseconds_per_midi_clock(float bpm);
-uint32_t microseconds_per_pulse(ppqn_clock_t * c, float bpm);
+uint32_t microseconds_per_pulse(float bpm);
+uint32_t clock_microseconds_per_pulse(ppqn_clock_t * c, float bpm);
 
 #endif
